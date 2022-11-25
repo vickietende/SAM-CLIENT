@@ -1,0 +1,73 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+        <span class="bi bi-three-dots-vertical"></span>
+    </div>
+        <div class="card-body" *ngIf="customerDetails">
+            <form  #form="ngForm"  (ngSubmit)="editCustomer()">
+            <div class="mb-3 row">
+                <label for="customerId" class="col-sm-2 col-form-label">ID</label>
+                <div class="col-sm-4">
+                  <input type="text"  class="form-control" id="customerId" name="customerId" readonly [(ngModel)]="customerDetails.id">
+                </div>
+              </div>
+            <div class="mb-3 row">
+                <label for="customerName" class="col-sm-2 col-form-label">Company Name</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" id="customerName" name="customerName" [(ngModel)]="customerDetails.customerName">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="address" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" id="address" name="address" [(ngModel)]="customerDetails.address">
+                </div>
+              </div>
+           
+              <div class="mb-3 row">
+                <label for="ddlcity" class="col-sm-2 col-form-label">City</label>
+                <div class="col-sm-10">
+                  <select class="form-select form-select-lg mb-3" id="ddlcity"  name="ddlcity" [(ngModel)]="customerDetails.city"  aria-label=".form-select-lg example">
+                <option *ngFor="let city of cityList"  value={{city.cityName}} >{{city.cityName}}</option>
+
+                  </select>
+                  
+                </div>
+                </div>
+              <div class="mb-3 row">
+                <label for="contactNo" class="col-sm-2 col-form-label">Contact</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" id="contactNo" name="contactNo" [(ngModel)]="customerDetails.contactNo">
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="division" class="col-sm-2 col-form-label">Division</label>
+                <div class="col-sm-4">
+                  <input type="text"   class="form-control" id="division" name="division" [(ngModel)]="customerDetails.division">
+                </div>
+
+                <label for="ABN" class="col-sm-2 col-form-label">ABN</label>
+                <div class="col-sm-4">
+                  <input type="text"  class="form-control" id="ABN" name="ABN" [(ngModel)]="customerDetails.abn">
+                </div>
+              </div>
+
+              <div class="form-group col-md-4 text-center">
+              
+                  <button class="btn btn-primary"  type="submit" *ngIf="customerDetails.id" >Save Changes</button>
+                
+              </div>
+             
+            </form>
+        </div>
+        <div class="card-footer">
+            <button class='btn btn-outline-secondary'
+            style='width:80px'
+            (click)='onBack()'>
+      <i class='fa fa-chevron-left'></i> Back
+    </button>
+       
+        </div>
+    
+</div>
+

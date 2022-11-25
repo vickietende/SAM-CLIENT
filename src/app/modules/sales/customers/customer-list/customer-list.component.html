@@ -1,0 +1,87 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+       <span class="bi bi-three-dots-vertical" (click)="toggleMenu()">
+        <div class="dropdown">
+       
+            <div id="myDropdown" class="dropdown-content" [style.Display]="dropDownStyle">
+           
+    
+            </div>
+        </div>
+        </span>
+       
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2">
+                <label for="filterby">Filter by:</label>
+            </div>
+            <div class="col-md-4">
+                <input id="filterby" type="text" [(ngModel)]="listFilter"/>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" (click)="initNewCustomer()">Create New Customer</button>
+              
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Filter by:{{listFilter}}</h4>
+            </div>
+
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped" *ngIf="customers.length">
+                <thead>
+                    <tr>
+                        
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>ABN</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Division</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of filteredCustomers | paginate:{itemsPerPage: 5, currentPage: p, totalItems: total}">
+                       
+                
+                        <td id="Id">
+                            <a [routerLink]="['/customer-list', customer.id]">
+                              {{ customer.id }}
+                            </a>
+                          </td>
+                        <td>{{customer.customerName  }}</td>
+                        <td>{{customer.customerCode}}</td>
+                        <td>{{customer.abn}}</td>
+                        <td>{{customer.address}}</td>
+                        <td>{{customer.contactNo}}</td>
+                        <td>{{customer.division}}</td>
+                        <td>{{customer.city}}</td>
+                    
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex justify-content-center">
+            <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+        </div>
+       
+    </div>
+    
+    <div class="card-footer">
+      
+    </div>
+
+</div>
+<div class="container">
+    <sam-customer-create [customer]="customerToAdd" (customers)="updateCustomerList($event)" ></sam-customer-create>
+</div>
+
+
+

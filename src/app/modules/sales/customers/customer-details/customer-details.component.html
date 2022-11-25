@@ -1,0 +1,78 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle }}
+        <span class="bi bi-three-dots-vertical" (click)="toggleMenu()">
+          <div class="dropdown" *ngIf="customer">
+       
+            <div id="myDropdown" class="dropdown-content" [style.Display]="dropDownStyle">
+            <a [routerLink]="['/customer-edit', customer.id]">Edit</a>
+            <a type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+            <a type="button" data-bs-toggle="modal" data-bs-target="#mergeModal" >Merge</a>
+
+    
+            </div>
+        </div> 
+        </span>  
+
+    </div>
+    <div class="card-body" *ngIf="customer">
+        <div class="row">
+            <div class='col-md-8'>
+                <div class='row'>
+                    <div class='col-md-4'>ID:</div>
+                    <div class='col-md-8'>{{ customer.id}}</div>
+                   
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>Customer Name:</div>
+                    <div class='col-md-8'>{{customer.customerName }}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>Customer Code:</div>
+                    <div class='col-md-8'>{{ customer.customerCode }}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>ABN:</div>
+                    <div class='col-md-8'>{{ customer.abn }}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>Division:</div>
+                    <div class='col-md-8'>{{customer.division}}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>Address:</div>
+                    <div class='col-md-8'>{{ customer.address }}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>Contact No:</div>
+                    <div class='col-md-8'>{{ customer.contactNo }}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col-md-4'>City:</div>
+                    <div class='col-md-8'>{{customer.city}}</div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class='card-footer'>
+        <button class='btn btn-outline-secondary'
+                style='width:80px'
+                (click)='onBack()'>
+          <i class='fa fa-chevron-left'></i> Back
+        </button>
+      </div>
+      <!--Merge Modal -->
+<div class="modal fade" id="mergeModal" tabindex="-1" aria-labelledby="mergeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+   <sam-customer-merge-modal></sam-customer-merge-modal>
+  </div>
+</div>
+  <!--Delete Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+     <sam-customer-delete></sam-customer-delete>
+    </div>
+  </div>
+</div>
+

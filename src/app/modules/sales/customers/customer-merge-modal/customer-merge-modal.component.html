@@ -1,0 +1,39 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="mergeModalLabel">Merge Customer Info</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body" *ngIf="mergedCustomer">
+      
+      <div class="mb-3 row">
+        <label for="ddlcustomers" class="col-sm-2 col-form-label">Customers</label>
+        <div class="col-sm-10" >
+          <select class="form-select form-select-lg mb-3" id="ddlcustomers" #ddlCustomers (change)="toggleInfo($event)" name="customer" [(ngModel)]="mySelect"   aria-label=".form-select-lg example">
+          <option *ngFor="let customer of customers" value={{customer.id}}>{{customer.customerName}}</option>
+
+          </select>
+                    </div>
+      </div>
+      <div >
+        <h4 class="alert alert-danger" [style.Display]="infoStyle">Merging Customer:{{name}}--ID: {{mySelect}} into Customer: {{mergedCustomer.customerName}}--ID: {{mergedCustomer.id}}
+          
+        </h4>
+        
+        <p>Customer ID: {{mergedCustomer.id}}</p>
+       
+        <p>Customer Name: {{mergedCustomer.customerName}}</p>
+        <p>Customer Code: {{mergedCustomer.customerCode}}</p>
+        <p>Customer ABN: {{mergedCustomer.abn}}</p>
+        <p>Customer division: {{mergedCustomer.division}}</p>
+        <p>Customer Contact: {{mergedCustomer.contactNo}}</p>
+        <p>Customer Address: {{mergedCustomer.address}}</p>
+        <p>Customer City: {{mergedCustomer.city}}</p>
+        
+
+      </div>
+    </div>
+    <div class="modal-footer" *ngIf="mergedCustomer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" (click)="mergeCustomers()">Merge</button>
+    </div>
+  </div>

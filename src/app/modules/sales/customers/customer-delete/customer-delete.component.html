@@ -1,0 +1,20 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="deleteModalLabel">Delete Customer</h5>
+      <button type="button" class="btn-close" id="closemodal" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body" *ngIf="customerDetails">
+      <div>
+        <p>Customer ID: {{customerDetails.id}}</p>
+        <p>Customer Name: {{customerDetails.customerName}}</p>
+        <p>Customer Code: {{customerDetails.customerCode}}</p>
+        <p>Customer City: {{customerDetails.city}}</p>
+        
+
+      </div>
+    </div>
+    <div class="modal-footer" *ngIf="customerDetails">
+      <button type="button" #btnClose class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-danger" (click)="deleteCustomer(id)">Delete</button>
+    </div>
+  </div>

@@ -1,0 +1,94 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "customerName": "Dairiboard Zimbabwe",
+      "customerCode": "SAM-0011",
+      "ABN": "001",
+      "division": "Symbio",
+      "address": "2 Belvedere Rd, Harare",
+      "contactNo": "0772 549 738",
+      "city": "Harare"
+    },
+    {
+      "id": 2,
+      "customerName": "Toyota",
+      "customerCode": "SAM-0012",
+      "ABN": "002",
+      "division": "Symbio",
+      "address": "1 Jefferson Rd Hatfield, Harare",
+      "contactNo": "0719 549 738",
+      "city": "Harare"
+    },
+    {
+      "id": 3,
+      "customerName": "Pick and Pay Zimbabwe",
+      "customerCode": "SAM-0013",
+      "ABN": "0033",
+      "division": "Symbio",
+      "address": "1 Queensway Rd , Bulawayo",
+      "contactNo": "0784 001 002",
+      "city": "Bulawayo"
+    },
+    {
+      "id": 4,
+      "customerName": "Meikles Zimbabwe",
+      "customerCode": "SAM-0014",
+      "ABN": "004",
+      "division": "Symbio",
+      "address": "12 Moffat Rd , Bulawayo",
+      "contactNo": "0784 000 008",
+      "city": "Bulawayo"
+    },
+    {
+      "id": 5,
+      "customerName": "Engen",
+      "customerCode": "SAM-0017",
+      "ABN": "005",
+      "division": "Symbio",
+      "address": "10 Livingstone Rd , Harare",
+      "contactNo": "0784 001 002",
+      "city": "Gweru"
+    },
+    {
+      "id": 6,
+      "customerName": "MoveMax Car Rentals",
+      "customerCode": "SAM-0022",
+      "ABN": "006",
+      "division": "Symbio",
+      "address": "18 General Booth Rd Braeside, Harare",
+      "contactNo": "0772336872",
+      "city": "Mutare"
+    },
+    {
+      "id": 7,
+      "customerName": "This Company",
+      "customerCode": "SAM-0034",
+      "ABN": "0033",
+      "division": "Symbio",
+      "address": "103 Nottingham Rd, Norton",
+      "contactNo": "0776821974",
+      "city": "Norton"
+    },
+    {
+      "id": 8,
+      "customerName": "this Company",
+      "customerCode": "SAM-0034",
+      "ABN": "0033",
+      "division": "Symbio",
+      "address": "103 NotingHam Road",
+      "contactNo": "0776821974",
+      "city": "Norton"
+    },
+    {
+      "id": 9,
+      "customerName": "Toyota",
+      "customerCode": "SAM-0012",
+      "ABN": "002",
+      "division": "Symbio",
+      "address": "13 Jefferson Rd, Hatfield, Harare",
+      "contactNo": "0719549738",
+      "city": "Harare"
+    }
+  ]
+}

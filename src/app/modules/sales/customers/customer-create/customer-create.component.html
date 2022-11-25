@@ -1,0 +1,87 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+        <span class="bi bi-three-dots-vertical" (click)="toggleMenu()">
+          <div class="dropdown">
+       
+            <div id="myDropdown" class="dropdown-content" [style.Display]="dropDownStyle">
+            <a [routerLink]="['/customer-create']">Create</a>
+            <a [routerLink]="['/customer-delete']">Delete</a>
+            <a [routerLink]="['/customer-merge-modal']">Merge</a>
+            </div>
+        </div>
+        </span>
+    </div>
+        <div class="card-body" *ngIf="customer">
+          <div *ngIf="customer"><h4>{{customer.customerName}}</h4>
+   
+          </div>
+
+          <form #cusForm="ngForm" (ngSubmit)="refreshCustomer(cusForm)">
+        
+            <div class="mb-3 row">
+                <label for="customerName" class="col-sm-2 col-form-label">Company Name</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control"  id="customerName" name="customerName" [(ngModel)]="customer.customerName" >
+                  
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="customerCode" class="col-sm-2 col-form-label">Company Code</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" id="customerCode" name="customerCode" [(ngModel)]="customer.customerCode">
+               
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="address" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                  <input type="text"  class="form-control" id="address" name="address" [(ngModel)]="customer.address" >
+                  
+                </div>
+              </div>
+            
+              <div class="mb-3 row" *ngIf="cityList">
+                <label for="ddlcity" class="col-sm-2 col-form-label">City</label>
+                <div class="col-sm-10">
+                  <select  class="form-select form-select-lg mb-3" id="ddlcity" [(ngModel)]="customer.city"  name="ddlcity"  aria-label=".form-select-lg example" [(ngModel)]="customer.city">
+                    <option>Select City</option>
+                  <option *ngFor="let city of cityList" value={{city.cityName}} >{{city.cityName}}</option>
+
+                  </select>
+              
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="contactNo" class="col-sm-2 col-form-label">Contact</label>
+                <div class="col-sm-10">
+                  <input type="text" [(ngModel)]="customer.contactNo" class="form-control" id="contactNo" name="contactNo" [(ngModel)]="customer.contactNo" />
+                
+                </div>
+              </div>
+              <div class="mb-3 row">
+                <label for="division" class="col-sm-2 col-form-label">Division</label>
+                <div class="col-sm-4">
+                  <input type="text"  class="form-control" id="division" name="division" [(ngModel)]="customer.division">
+              
+                </div>
+
+                <label for="ABN" class="col-sm-2 col-form-label">ABN</label>
+                <div class="col-sm-4">
+                  <input type="text"  class="form-control" id="ABN" name="ABN" [(ngModel)]="customer.abn">
+                
+                </div>
+              </div>
+
+              <div class="form-group col-md-12 text-center">
+                <button class="btn btn-primary" (click)="createCustomer(customer)">Save New Customer</button>
+    
+              </div>
+            </form>
+        </div>
+     
+        <div class="card-footer">
+
+        </div>
+    
+</div>
